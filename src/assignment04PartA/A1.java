@@ -25,6 +25,10 @@ public class A1 {
             int temp = arr[i];
             arr[i] = arr[newSmallestIdx];
             arr[newSmallestIdx] = temp;
+
+            if (verbose) {
+                System.out.printf("%4d: %s%n", i + 1, Arrays.toString(arr));
+            }
         }
     }
 
