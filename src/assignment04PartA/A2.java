@@ -26,6 +26,11 @@ public class A2 {
                 index--;
             }
             arr[index + 1] = elementToInsert;
+
+            if (verbose) {
+                System.out.printf("%4d: %s%n", i, Arrays.toString(arr));
+            }
+
         }
     }
 
