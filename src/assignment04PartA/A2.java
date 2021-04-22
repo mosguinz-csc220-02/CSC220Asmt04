@@ -13,6 +13,12 @@ public class A2 {
 
     }
 
+    /**
+     * Perform an insertion sort on the given array of numbers
+     *
+     * @param arr     The array to sort.
+     * @param verbose If {@code true}, prints the array each time an element has been sorted.
+     */
     public static void insertionSort(int[] arr, boolean verbose) {
         int start = 0;
         int stop = arr.length - 1;
@@ -30,7 +36,6 @@ public class A2 {
             if (verbose) {
                 System.out.printf("%4d: %s%n", i, Arrays.toString(arr));
             }
-
         }
     }
 
