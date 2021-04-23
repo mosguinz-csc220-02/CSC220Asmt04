@@ -3,6 +3,7 @@ package assignment04PartC3;
 public class C3 {
 
     public static void main(String[] args) {
+        System.out.println("C3");
         PriorityQueueInterface<String> myPriorityQueue = new LinkedPriorityQueue<>();
         System.out.println(myPriorityQueue);
         myPriorityQueue.add("Jim");
