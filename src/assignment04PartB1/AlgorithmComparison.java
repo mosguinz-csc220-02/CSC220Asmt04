@@ -29,7 +29,7 @@ public class AlgorithmComparison {
 
         try {
             fOut = new PrintWriter(fileName);
-            fOut.println("n,Loop A (ns),Loop B (ns)");
+            fOut.println("n,Algorithm A (ns),Algorithm B (ns)");
         } catch (FileNotFoundException e) {
             System.err.println(e);
         }
