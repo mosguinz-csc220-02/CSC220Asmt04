@@ -72,12 +72,13 @@ public final class LinkedQueue<T> implements QueueInterface<T> {
      */
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder();
+        StringBuilder s = new StringBuilder("[");
         Node thisNode = this.firstNode;
         while (thisNode != null) {
-            s.append(thisNode.data.toString() + " ");
+            s.append(thisNode.data.toString()).append(", ");
             thisNode = thisNode.next;
         }
+        s.replace(s.length() - 2, s.length(), "]");
         return s.toString();
     }
 
