@@ -3,6 +3,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/netbeans,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=netbeans,java
 
+# Generated CSVs for Part B
+*.csv
+!CSC220Asmt04/*.csv
+
 ### Java ###
 # Compiled class file
 *.class
