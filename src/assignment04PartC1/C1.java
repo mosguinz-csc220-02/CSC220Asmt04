@@ -1,4 +1,4 @@
-package assignment04PartC;
+package assignment04PartC1;
 
 public class C1 {
 

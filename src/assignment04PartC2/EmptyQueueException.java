@@ -1,4 +1,4 @@
-package assignment04PartC1;
+package assignment04PartC2;
 
 /**
  * A class of runtime exceptions thrown by methods to indicate that a queue is empty.

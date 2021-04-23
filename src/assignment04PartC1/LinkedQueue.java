@@ -1,4 +1,4 @@
-package assignment04PartC;
+package assignment04PartC1;
 
 /**
  * A class that implements the ADT queue by using a chain of nodes that has both head and tail
