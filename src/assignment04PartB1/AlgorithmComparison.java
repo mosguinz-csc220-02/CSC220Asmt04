@@ -7,7 +7,7 @@ import java.util.Random;
 public class AlgorithmComparison {
 
     public static void main(String[] args) {
-        // Set this to true for CSV-like output.
+        // Set this to true for CSV output.
         boolean printToCsv = true;
 
         // Path to output CSV file.
@@ -20,7 +20,7 @@ public class AlgorithmComparison {
         // DIFFERENT RANDOMLY-GENERATED ARRAYS FOR EACH RUN.
         int runs = 10000;
 
-        // Max array size.
+        // Max array size for each test.
         int maxArrSize = 10000;
 
         /* Spaghetti below ************************************************************************/
