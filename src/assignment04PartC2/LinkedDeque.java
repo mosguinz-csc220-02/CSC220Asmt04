@@ -103,6 +103,22 @@ public class LinkedDeque<T> implements DequeInterface<T> {
         return (firstNode == null) && (lastNode == null);
     } // end isEmpty
 
+    /**
+     * @return Contents of the queue.
+     * @author Mos
+     */
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("[");
+        DLNode thisNode = this.firstNode;
+        while (thisNode != null) {
+            s.append(thisNode.data.toString()).append(", ");
+            thisNode = thisNode.next;
+        }
+        s.replace(s.length() - 2, s.length(), "]");
+        return s.toString();
+    }
+
     private class DLNode {
 
         private T data;     // Deque entry
