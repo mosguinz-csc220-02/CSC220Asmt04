@@ -151,6 +151,22 @@ public final class LinkedPriorityQueue<T extends Comparable<? super T>>
         return result;
     } // end remove
 
+    /**
+     * @return Contents of the queue.
+     * @author Mos
+     */
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("[");
+        Node thisNode = this.firstNode;
+        while (thisNode != null) {
+            s.append(thisNode.data.toString()).append(", ");
+            thisNode = thisNode.next;
+        }
+        s.replace(s.length() - 2, s.length(), "]");
+        return s.toString();
+    }
+
     private class Node {
 
         private T data; // Entry in priority queue
