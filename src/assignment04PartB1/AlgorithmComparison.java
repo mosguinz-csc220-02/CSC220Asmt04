@@ -17,7 +17,8 @@ public class AlgorithmComparison {
         boolean printToConsole = true;
 
         // `n` number of tests. 1 to `n`, inclusive.
-        int runUntil = 10000;
+        // DIFFERENT RANDOMLY-GENERATED ARRAYS FOR EACH RUN.
+        int runs = 10000;
 
         // Max array size.
         int maxArrSize = 10000;
@@ -34,7 +35,7 @@ public class AlgorithmComparison {
             System.err.println(e);
         }
 
-        for (int n = 1; n <= runUntil; n++) {
+        for (int n = 1; n <= runs; n++) {
             long start, stop, deltaA, deltaB;
             int[] arr = generateRandomInts(maxArrSize);
 
