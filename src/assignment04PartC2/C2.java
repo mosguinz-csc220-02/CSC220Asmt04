@@ -4,6 +4,7 @@ public class C2 {
 
     public static void main(String[] args) {
         DequeInterface<String> myDeque = new LinkedDeque<>();
+        System.out.println(myDeque);
         myDeque.addToFront("Jim");
         System.out.println(myDeque);
         myDeque.addToFront("Jess");

@@ -78,6 +78,10 @@ public final class LinkedQueue<T> implements QueueInterface<T> {
             s.append(thisNode.data.toString()).append(", ");
             thisNode = thisNode.next;
         }
+
+        if (s.length() == 1) {
+            return s.append("]").toString();
+        }
         s.replace(s.length() - 2, s.length(), "]");
         return s.toString();
     }

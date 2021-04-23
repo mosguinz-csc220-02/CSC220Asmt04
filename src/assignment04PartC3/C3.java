@@ -4,6 +4,7 @@ public class C3 {
 
     public static void main(String[] args) {
         PriorityQueueInterface<String> myPriorityQueue = new LinkedPriorityQueue<>();
+        System.out.println(myPriorityQueue);
         myPriorityQueue.add("Jim");
         System.out.println(myPriorityQueue);
         myPriorityQueue.add("Josh");

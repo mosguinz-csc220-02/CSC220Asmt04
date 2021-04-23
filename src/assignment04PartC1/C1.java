@@ -4,6 +4,7 @@ public class C1 {
 
     public static void main(String[] args) {
         QueueInterface<String> myQueue = new LinkedQueue<>();
+        System.out.println(myQueue);
         myQueue.enqueue("Jane");
         System.out.println(myQueue);
         myQueue.enqueue("Jess");
