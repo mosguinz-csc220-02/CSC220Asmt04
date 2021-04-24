@@ -29,12 +29,12 @@ public class A3 {
         while (space > 0) {
             for (int i = start; i < start + space; i++) {
                 incrInsertionSort(arr, i, stop, space);
-
-                if (verbose) {
-                    System.out.printf("%4d: %s%n", i + 1, Arrays.toString(arr));
-                }
             }
-            space = space / 2;
+            space /= 2;
+
+            if (verbose) {
+                System.out.printf("%4d: %s%n", space, Arrays.toString(arr));
+            }
         }
     }
 
@@ -48,9 +48,9 @@ public class A3 {
      * @param space     The equally-spaced length between each index.
      */
     private static void incrInsertionSort(int[] arr, int incrStart, int stop, int space) {
-        int unsorted, index;
+        int index;
 
-        for (unsorted = incrStart + space; unsorted <= stop; unsorted += space) {
+        for (int unsorted = incrStart + space; unsorted <= stop; unsorted += space) {
             int elementToInsert = arr[unsorted];
             index = unsorted - space;
 
