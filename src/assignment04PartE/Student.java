@@ -9,6 +9,7 @@ import java.util.Comparator;
 public final class Student implements Comparable<Student> {
 
     private static String compareToPriority;
+    private static int queueCounter = 1;
 
     private final String firstName;
     private final String lastName;
@@ -16,6 +17,7 @@ public final class Student implements Comparable<Student> {
     private final double gpa;
     private final int smallQuestionTotal;
     private final int bigQuestionTotal;
+    private final int queueNumber;
 
     public Student(String firstName, String lastName, int studentId, double gpa,
             int smallQuestionTotal,
@@ -26,6 +28,7 @@ public final class Student implements Comparable<Student> {
         this.gpa = gpa;
         this.smallQuestionTotal = smallQuestionTotal;
         this.bigQuestionTotal = bigQuestionTotal;
+        this.queueNumber = queueCounter++;
     }
 
     public static String[] getPriorities() {
@@ -43,6 +46,10 @@ public final class Student implements Comparable<Student> {
 
     public static void setCompareToPriority(String p) {
         compareToPriority = p;
+    }
+
+    public int getQueueNumber() {
+        return queueNumber;
     }
 
     public String getFirstName() {
