@@ -98,9 +98,13 @@ public final class Student implements Comparable<Student> {
                     .thenComparing(Student::getGpa)
                     .thenComparing(Student::getStudentId)
                     .compare(this, student);
-            case "number-of-small-and-big-questions" -> Integer
-                    .compare(student.bigQuestionTotal + student.smallQuestionTotal,
-                            this.bigQuestionTotal + this.smallQuestionTotal);
+            case "number-of-small-and-big-questions" -> Comparator
+                    .comparing(Student::getAllQuestionTotal)
+                    .thenComparing(Student::getBigQuestionTotal)
+                    .thenComparing(Student::getSmallQuestionTotal)
+                    .thenComparing(Student::getGpa)
+                    .thenComparing(Student::getStudentId)
+                    .compare(this, student);
             default -> 0;
         };
     }
