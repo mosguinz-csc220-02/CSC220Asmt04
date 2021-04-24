@@ -1,5 +1,7 @@
 package assignment04PartE;
 
+import java.util.Comparator;
+
 /**
  * Part E
  */
@@ -65,5 +67,37 @@ public final class Student implements Comparable<Student> {
 
     public int getBigQuestionTotal() {
         return bigQuestionTotal;
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        return switch (compareToPriority) {
+            case "first-name" -> Comparator.comparing(Student::getFirstName)
+                    .thenComparing(Student::getFirstName)
+                    .thenComparing(Student::getStudentId)
+                    .compare(this, student);
+            case "last-name" -> Comparator.comparing(Student::getLastName)
+                    .thenComparing(Student::getFirstName)
+                    .thenComparing(Student::getStudentId)
+                    .compare(this, student);
+            case "student-id" -> Comparator.comparing(Student::getStudentId)
+                    .thenComparing(Student::getLastName)
+                    .compare(this, student);
+            case "gpa" -> Comparator.comparing(Student::getGpa)
+                    .thenComparing(Student::getStudentId)
+                    .compare(this, student);
+            case "number-of-small-questions" -> Comparator.comparing(Student::getSmallQuestionTotal)
+                    .thenComparing(Student::getGpa)
+                    .thenComparing(Student::getStudentId)
+                    .compare(this, student);
+            case "number-of-big-questions" -> Comparator.comparing(Student::getBigQuestionTotal)
+                    .thenComparing(Student::getGpa)
+                    .thenComparing(Student::getStudentId)
+                    .compare(this, student);
+            case "number-of-small-and-big-questions" -> Integer
+                    .compare(student.bigQuestionTotal + student.smallQuestionTotal,
+                            this.bigQuestionTotal + this.smallQuestionTotal);
+            default -> 0;
+        };
     }
 }
