@@ -8,12 +8,12 @@ public class A3 {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(numbers));
-        shellSort(numbers);
+        shellSort(numbers, true);
         System.out.println(Arrays.toString(numbers));
 
     }
 
-    public static void shellSort(int[] arr) {
+    public static void shellSort(int[] arr, boolean verbose) {
         int start = 0;
         int stop = arr.length - 1;
         int n = stop - start + 1;
@@ -22,6 +22,10 @@ public class A3 {
         while (space > 0) {
             for (int i = start; i < start + space; i++) {
                 incrInsertionSort(arr, i, stop, space);
+
+                if (verbose) {
+                    System.out.printf("%4d: %s%n", i + 1, Arrays.toString(arr));
+                }
             }
             space = space / 2;
         }
