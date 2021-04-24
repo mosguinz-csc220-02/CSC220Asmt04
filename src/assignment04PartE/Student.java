@@ -23,4 +23,28 @@ public final class Student implements Comparable<Student> {
         this.smallQuestionTotal = smallQuestionTotal;
         this.bigQuestionTotal = bigQuestionTotal;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public int getSmallQuestionTotal() {
+        return smallQuestionTotal;
+    }
+
+    public int getBigQuestionTotal() {
+        return bigQuestionTotal;
+    }
 }
