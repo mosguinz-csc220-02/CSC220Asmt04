@@ -7,7 +7,25 @@ package assignment04PartB2;
  */
 public class ArraySortByFirst {
 
-    public static void sortByFirst(int data[][]) {
+    /**
+     * Insertion sort, but with 2D array. Sorted by the zeroth element.
+     *
+     * @param data The N by N 2D array to sort.
+     */
+    public static void sortByFirst(int[][] data) {
+        int start = 0;
+        int stop = data.length - 1;
+
+        for (int i = start + 1; i <= stop; i++) {
+            int[] elementToInsert = data[i];
+            int index = i - 1;
+
+            while ((index >= start) && (elementToInsert[0] < data[index][0])) {
+                data[index + 1] = data[index];
+                index--;
+            }
+            data[index + 1] = elementToInsert;
+        }
     }
 
     public static void display(int data[][]) {
