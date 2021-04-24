@@ -112,7 +112,7 @@ public final class Student implements Comparable<Student> {
                     .thenComparing(Student::getGpa)
                     .thenComparing(Student::getStudentId)
                     .compare(this, student);
-            default -> 0;
+            default -> Comparator.comparing((Student::getQueueNumber)).compare(this, student);
         };
     }
 }
