@@ -13,6 +13,13 @@ public class A3 {
 
     }
 
+    /**
+     * Perform a Shell sort on the given array of numbers.
+     *
+     * @param arr     The array to sort.
+     * @param verbose If {@code true}, prints the array each time an element has been sorted
+     *                (re-numerating on each split).
+     */
     public static void shellSort(int[] arr, boolean verbose) {
         int start = 0;
         int stop = arr.length - 1;
@@ -31,6 +38,15 @@ public class A3 {
         }
     }
 
+    /**
+     * Perform insertion sort on divided segments of the array.
+     *
+     * @param arr       The segment to sort.
+     * @param incrStart The first index to start sorting, where this index is incremented on each
+     *                  segment.
+     * @param stop      The last index to sort, inclusive.
+     * @param space     The equally-spaced length between each index.
+     */
     private static void incrInsertionSort(int[] arr, int incrStart, int stop, int space) {
         int unsorted, index;
 
