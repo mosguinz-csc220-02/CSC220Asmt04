@@ -25,6 +25,7 @@ public class A3 {
         int stop = arr.length - 1;
         int n = stop - start + 1;
         int space = n / 2;
+        int split = 1;
 
         while (space > 0) {
             for (int i = start; i < start + space; i++) {
@@ -33,7 +34,7 @@ public class A3 {
             space /= 2;
 
             if (verbose) {
-                System.out.printf("%4d: %s%n", space, Arrays.toString(arr));
+                System.out.printf("%4d: %s%n", split++, Arrays.toString(arr));
             }
         }
     }
