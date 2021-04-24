@@ -50,7 +50,7 @@ public class A3 {
     private static void incrInsertionSort(int[] arr, int incrStart, int stop, int space) {
         int unsorted, index;
 
-        for (unsorted = incrStart + space; unsorted <= stop; unsorted = unsorted + space) {
+        for (unsorted = incrStart + space; unsorted <= stop; unsorted += space) {
             int elementToInsert = arr[unsorted];
             index = unsorted - space;
 
