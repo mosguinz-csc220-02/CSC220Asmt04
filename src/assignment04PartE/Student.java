@@ -69,6 +69,10 @@ public final class Student implements Comparable<Student> {
         return bigQuestionTotal;
     }
 
+    public int getAllQuestionTotal() {
+        return smallQuestionTotal + bigQuestionTotal;
+    }
+
     @Override
     public int compareTo(Student student) {
         return switch (compareToPriority) {
