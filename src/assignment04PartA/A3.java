@@ -56,7 +56,7 @@ public class A3 {
 
             while ((index >= incrStart) && (elementToInsert < arr[index])) {
                 arr[index + space] = arr[index];
-                index = index - space;
+                index -= space;
             }
             arr[index + space] = elementToInsert;
         }
