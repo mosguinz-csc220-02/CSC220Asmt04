@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 
 public class SFSUOneStop {
 
-    private static final String tableFormat = "%10s%-6s   %-6s   %-6s   %-6s   %-6s   %-6s%n";
+    private static final String tableFormat = "%10s%-9s%-9s%-9s%-9.2f%-9s%s%n";
 
     public static void display(PriorityQueue<Student> pq, String priority) {
         System.out.printf("Priority: %s%n", priority);
