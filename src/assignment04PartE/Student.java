@@ -23,8 +23,7 @@ public final class Student implements Comparable<Student> {
     private final int bigQuestionTotal;
 
     public Student(String firstName, String lastName, int studentId, double gpa,
-            int smallQuestionTotal,
-            int bigQuestionTotal) {
+            int smallQuestionTotal, int bigQuestionTotal) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentId = studentId;
