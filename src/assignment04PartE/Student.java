@@ -9,6 +9,10 @@ import java.util.List;
 
 public final class Student implements Comparable<Student> {
 
+    /**
+     * Priority list of student IDs as provided by the supervisor. IDs at the start of the list will
+     * get served first.
+     */
     private static final List<Integer> SUPERVISOR_PRIORITY_BY_STUDENT_ID = List.of(
             1002, 1001, 1004, 1007, 1003, 1005, 1006
     );
