@@ -1,6 +1,7 @@
 package assignment04PartE;
 
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Part E
@@ -8,8 +9,11 @@ import java.util.Comparator;
 
 public final class Student implements Comparable<Student> {
 
+    private static final List<Integer> SUPERVISOR_PRIORITY_BY_STUDENT_ID = List.of(
+            1002, 1001, 1004, 1007, 1003, 1005, 1006
+    );
+
     private static String compareToPriority;
-    private static int queueCounter = 1;
 
     private final String firstName;
     private final String lastName;
@@ -17,7 +21,6 @@ public final class Student implements Comparable<Student> {
     private final double gpa;
     private final int smallQuestionTotal;
     private final int bigQuestionTotal;
-    private final int queueNumber;
 
     public Student(String firstName, String lastName, int studentId, double gpa,
             int smallQuestionTotal,
@@ -28,7 +31,6 @@ public final class Student implements Comparable<Student> {
         this.gpa = gpa;
         this.smallQuestionTotal = smallQuestionTotal;
         this.bigQuestionTotal = bigQuestionTotal;
-        this.queueNumber = queueCounter++;
     }
 
     public static String[] getPriorities() {
@@ -48,8 +50,13 @@ public final class Student implements Comparable<Student> {
         compareToPriority = p;
     }
 
-    public int getQueueNumber() {
-        return queueNumber;
+    /**
+     * @return The priority level as defined by the supervisor, where 1 is of the highest priority.
+     */
+    public int getSupervisorPriority() {
+        return !SUPERVISOR_PRIORITY_BY_STUDENT_ID.contains(studentId)
+                ? SUPERVISOR_PRIORITY_BY_STUDENT_ID.size()
+                : SUPERVISOR_PRIORITY_BY_STUDENT_ID.indexOf(studentId) + 1;
     }
 
     public String getFirstName() {
@@ -112,7 +119,8 @@ public final class Student implements Comparable<Student> {
                     .thenComparing(Student::getGpa)
                     .thenComparing(Student::getStudentId)
                     .compare(this, student);
-            default -> Comparator.comparing((Student::getQueueNumber)).compare(this, student);
+            default -> Comparator.comparing(Student::getSupervisorPriority)
+                    .compare(this, student);
         };
     }
 }
